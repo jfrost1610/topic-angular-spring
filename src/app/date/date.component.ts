@@ -8,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class DateComponent implements OnInit {
 
   dateMessage: string;
+  counter: number = 0;
 
   constructor() {
     setInterval(() => {
+      this.counter++;
       let currentDate = new Date();
       this.dateMessage = currentDate.toDateString() + " " + currentDate.toLocaleTimeString();
     }, 1000);
