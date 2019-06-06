@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable, ComponentFactoryResolver } from '@angular/core';
 import { Topic } from './topic.model';
 
@@ -21,8 +21,15 @@ export class TopicService {
           console.log("New Topic added successfully!");
         }
       })
+      
+  }
 
-
+  view(cb: (response:any) => any) {
+    this.http.get(this.BASEURL + 'topics', { observe: 'response' })
+      .subscribe((response) => {
+        console.log("View Response",response);
+        cb(response);
+      })
   }
 }
 

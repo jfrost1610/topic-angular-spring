@@ -1,6 +1,27 @@
-<div>
-    Add Topic ID : <input type="text" [(ngModel)]="topicId">
-    Add Topic Name : <input type="text" [(ngModel)]="topicName">
-    Add Topic Description : <input type="text" [(ngModel)]="topicDescription">
-    <button (click)="add()">Add</button>
+<div class="add-topic">
+
+    <div class="add-topic-heading">Add a new Topic</div>
+
+    <div class="add-topic-op">
+        ID : <input type="text" [(ngModel)]="topicId">&nbsp;&nbsp;
+        Name : <input type="text" [(ngModel)]="topicName">&nbsp;&nbsp;
+        Description : <input type="text" [(ngModel)]="topicDescription">&nbsp;&nbsp;
+        <button (click)="add()">Add</button>
+    </div>
+
+</div>
+
+<div class="view-topics">
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+        <tr *ngFor="let topic of topics">
+            <td>{{topic.id}} </td>
+            <td>{{topic.name}}</td>
+            <td>{{topic.description}}</td>
+        </tr>
+    </table>
 </div>
