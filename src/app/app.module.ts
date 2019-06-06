@@ -5,10 +5,12 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { TopicService } from './topic.service';
+import { AddTopicComponent } from './add-topic/add-topic.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AddTopicComponent
   ],
   imports: [
     BrowserModule,
