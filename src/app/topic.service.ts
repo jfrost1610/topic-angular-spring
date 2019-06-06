@@ -7,7 +7,7 @@ import { Topic } from './topic.model';
 })
 export class TopicService {
 
-  BASEURL: string = 'http://localhost:8081/';
+  BASEURL: string = 'http://ec2-13-233-224-7.ap-south-1.compute.amazonaws.com:8081/';
 
   constructor(private http: HttpClient) {
 
