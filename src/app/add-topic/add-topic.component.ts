@@ -27,8 +27,10 @@ export class AddTopicComponent implements OnInit {
 
   add() {
     var topic: Topic = new Topic(this.topicId, this.topicName, this.topicDescription);
-    this.svc.add(topic);
-    this.ngOnInit();
+    this.svc.add(topic, () => {
+      this.ngOnInit();
+    });
+
   }
 
 }
